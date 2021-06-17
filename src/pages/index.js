@@ -12,6 +12,7 @@ import Interests from "../components/sections/interests"
 import Projects from "../components/sections/projects"
 import Contact from "../components/sections/contact"
 import { seoTitleSuffix } from "../../config"
+import Technologies from "../components/sections/technologies"
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.index.edges[0].node
@@ -40,6 +41,7 @@ const IndexPage = ({ data }) => {
         <Articles />
         <About content={data.about.edges} />
         <Interests content={data.interests.edges} />
+        <Technologies content={data.technologies.edges} />
         <Projects content={data.projects.edges} />
         <Contact content={data.contact.edges} />
       </Layout>
@@ -111,6 +113,30 @@ export const pageQuery = graphql`
           exports {
             shownItems
             interests {
+              name
+              icon {
+                childImageSharp {
+                  fixed(width: 20, height: 20, quality: 90) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+    technologies: allMdx(
+      filter: { fileAbsolutePath: { regex: "/index/technologies/" } }
+    ) {
+      edges {
+        node {
+          exports {
+            shownItems
+            technologies {
               name
               icon {
                 childImageSharp {
