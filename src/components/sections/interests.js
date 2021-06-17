@@ -147,7 +147,7 @@ const Interests = ({ content }) => {
     sequence()
   }, [onScreen, shownInterests, iControls, bControls])
 
-  const showMoreItems = () => setShownInterests(shownInterests + 4)
+  const showMoreItems = () => setShownInterests(shownInterests + 5)
 
   return (
     <StyledSection id="interests">
