@@ -4,7 +4,7 @@ module.exports = {
   siteTitle: "Portfolio",
   siteShortTitle: "David Ruiz", // Used as logo text in header, footer, and splash screen
   siteDescription:
-    "software engineer with more than 3 years of experience in the world of web and mobile development.",
+    "A passionate Software Engineer with more than 3 years of experience.",
   siteUrl: "https://gatsby-starter-portfolio-minimal.netlify.app/",
   siteLanguage: "en_US",
   siteIcon: "content/favicon.png", // Relative to gatsby-config file
