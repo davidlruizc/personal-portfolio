@@ -86,7 +86,7 @@ module.exports = {
         url: "/#about",
       },
       {
-        name: "Features",
+        name: "Projects",
         url: "/#projects",
       },
       {
@@ -106,9 +106,9 @@ module.exports = {
       name: "Privacy",
       url: "/privacy",
     },
-    {
-      name: "Imprint",
-      url: "/imprint",
-    },
+    // {
+    //   name: "Imprint",
+    //   url: "/imprint",
+    // },
   ],
 }
