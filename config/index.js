@@ -61,20 +61,20 @@ module.exports = {
       url: "https://www.linkedin.com/in/davidlecodes/",
     },
     {
-      name: "Medium",
-      url: "https://konstantinmuenster.medium.com/",
+      name: "Twitter",
+      url: "https://twitter.com/davidlecodes",
     },
     {
       name: "Github",
       url: "https://github.com/davidlruizc",
     },
     {
-      name: "Behance",
-      url: "https://www.behance.net/konstanmnster",
+      name: "Instagram",
+      url: "https://www.instagram.com/davidlecodes/",
     },
     {
       name: "Mail",
-      url: "mailto:mail@konstantin.digital",
+      url: "mailto:davidl.ruizc@gmail.com",
     },
   ],
 

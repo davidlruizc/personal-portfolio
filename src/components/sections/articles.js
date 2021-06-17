@@ -117,7 +117,6 @@ const Articles = () => {
   const MAX_ARTICLES = shownArticles
 
   const { isIntroDone, darkMode } = useContext(Context).state
-  const [articles, setArticles] = useState()
   const articlesControls = useAnimation()
 
   // Load and display articles after the splashScreen sequence is done
@@ -129,15 +128,6 @@ const Articles = () => {
           y: 0,
           transition: { delay: 1 },
         })
-        fetch(mediumRssFeed, { headers: { Accept: "application/json" } })
-          // fetch(rssFeed, { headers: { Accept: "application/json" } })
-          .then(res => res.json())
-          // Feed also contains comments, therefore we filter for articles only
-          .then(data => data.items.filter(item => item.categories.length > 0))
-          // .then(data => data.items.filter(item => item.title.length > 0))
-          .then(newArticles => newArticles.slice(0, MAX_ARTICLES))
-          .then(articles => setArticles(articles))
-          .catch(error => console.log(error))
       }
     }
     loadArticles()
@@ -152,58 +142,40 @@ const Articles = () => {
       <StyledContentWrapper>
         <h3 className="section-title">Latest Articles</h3>
         <div className="articles">
-          {articles
-            ? articles.map(item => (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  title={item.title}
-                  aria-label={item.link}
-                  key={item.link}
-                >
-                  <div className="card">
-                    <span className="category">
-                      <Underlining color="tertiary" hoverColor="secondary">
-                        {item.categories[2]}
-                      </Underlining>
-                    </span>
-                    <h4 className="title">{item.title}</h4>
-                    <span className="date">{parseDate(item.pubDate)}</span>
-                  </div>
-                </a>
-              ))
-            : [...Array(MAX_ARTICLES <= 3 ? MAX_ARTICLES : 3)].map((i, key) => (
-                <div className="card" key={key}>
-                  <SkeletonLoader
-                    height="1.5rem"
-                    style={{ marginBottom: ".5rem" }}
-                    background={
-                      darkMode
-                        ? darkTheme.colors.tertiary
-                        : lightTheme.colors.tertiary
-                    }
-                  />
-                  <SkeletonLoader
-                    height="4rem"
-                    background={
-                      darkMode
-                        ? darkTheme.colors.tertiary
-                        : lightTheme.colors.tertiary
-                    }
-                  />
-                  <SkeletonLoader
-                    height=".75rem"
-                    width="50%"
-                    style={{ marginTop: ".5rem" }}
-                    background={
-                      darkMode
-                        ? darkTheme.colors.tertiary
-                        : lightTheme.colors.tertiary
-                    }
-                  />
-                </div>
-              ))}
+          <a
+            href="https://dev.to/davidlecodes/face-recognition-app-with-azure-3ib9"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            title="Face recognition app with Azure"
+            aria-label="https://dev.to/davidlecodes/face-recognition-app-with-azure-3ib9"
+          >
+            <div className="card">
+              <span className="category">
+                <Underlining color="tertiary" hoverColor="secondary">
+                  React / Node
+                </Underlining>
+              </span>
+              <h4 className="title">Face recognition app with Azure</h4>
+              <span className="date">18 November 2019</span>
+            </div>
+          </a>
+          <a
+            href="https://dev.to/davidlecodes/react-navigation-getting-started-3jlh"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            title="React Navigation - Getting started!"
+            aria-label="https://dev.to/davidlecodes/react-navigation-getting-started-3jlh"
+          >
+            <div className="card">
+              <span className="category">
+                <Underlining color="tertiary" hoverColor="secondary">
+                  React Native
+                </Underlining>
+              </span>
+              <h4 className="title">React Navigation - Getting started!</h4>
+              <span className="date">17 July 2019</span>
+            </div>
+          </a>
         </div>
       </StyledContentWrapper>
     </StyledSection>
