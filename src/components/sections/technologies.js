@@ -148,7 +148,7 @@ const Technologies = ({ content }) => {
     sequence()
   }, [onScreen, shownInterests, iControls, bControls])
 
-  const showMoreItems = () => setShownInterests(shownInterests + 5)
+  const showMoreItems = () => setShownInterests(shownInterests + 31)
 
   return (
     <StyledSection id="technologies">
