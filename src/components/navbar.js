@@ -67,7 +67,9 @@ const Navbar = () => {
       {button.useFileName ? (
         <a
           className="cta-btn"
-          href={`/${button.fileName}`}
+          // Use this as deploy without github pages
+          // href={`/${button.fileName}`}
+          href={`https://davidlruizc.github.io/personal-portfolio/${button.fileName}`}
           target="_blank"
           rel="noopener noreferrer"
         >
